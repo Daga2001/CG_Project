@@ -1,0 +1,11 @@
+# Created with Anim8or 1.00
+# Object "Rock Walkway 03":
+
+newmtl RockWalkway3
+Ka 0.106 0.106 0.106
+Kd 0.357 0.357 0.357
+Ks 0.255 0.255 0.255
+Ns 738.6
+map_Kd RockWalkway03_Base_Diffuse.png
+map_Ks RockWalkway03_Base_Specular.png
+
