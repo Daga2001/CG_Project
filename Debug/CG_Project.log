@@ -2,10 +2,14 @@
 C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(38,31): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(39,29): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(40,30): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(54,28): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(55,28): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(56,28): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(57,29): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(59,26): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(60,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(415,20): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(524,15): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(750,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(530,15): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\main.cpp(731,22): warning C4018: '<': no coinciden signed/unsigned
 LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   CG_Project.vcxproj -> C:\Users\David\Documents\Visual Studio 2019\Projects\CG_Project\Debug\CG_Project.exe

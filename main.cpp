@@ -47,14 +47,14 @@ float initYaw = -35.500000;
 /*
 * Controles:
 * 1 y 5: para avanzar el x-wing adelante
-* 2 y 6: para ir adelante
+* 2 y 6: para ir hacía atras
 * 4: bajar
 * 3: subir
 */
-float xWingPosX = 5.0f;
-float xWingPosY = 0.0f;
-float xWingPosZ = 10.0f;
-float rot_x_wing = 45.000000f;
+float xWingPosX = 16.300026;
+float xWingPosY = -6.199996;
+float xWingPosZ = -4.399998;
+float rot_x_wing = 28.300184;
 float centerX = 18.500034f;
 float centerY = -0.800000;
 float centerZ = 3.199999;
@@ -430,6 +430,12 @@ void clearMemory()
 
 int main()
 {
+	// Handles the input UI.
+	std::cout << "Cual sera la velocidad de traslacion de la camara? (Se recomienda un valor de 5.0f):\n";
+	std::cin >> initCameraSpeed;
+	std::cout << "Cual sera la velocidad de rotacion de la camara? (Se recomienda un valor de 0.5f):\n";
+	std::cin >> initCameraSpeedRot;
+
 	mainWindow = Window(1366, 768); // 1280, 1024 or 1024, 768
 	mainWindow.Initialise();
 
@@ -547,7 +553,6 @@ int main()
 
 		glm::vec3 lowerLight = camera.getCameraPosition();
 		lowerLight.y -= 0.3f;
-		//spotLights[0].SetFlash(lowerLight, camera.getCameraDirection());
 
 		shaderList[0].SetDirectionalLight(&mainLight);
 		shaderList[0].SetPointLights(pointLights, pointLightCount);
@@ -565,7 +570,6 @@ int main()
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		dirtTexture.UseTexture();
 		shinyMaterial.UseMaterial(uniformSpecularIntensity, uniformShininess);
@@ -581,11 +585,11 @@ int main()
 		// Giro de x-wing
 		if (mainWindow.getsKeys()[GLFW_KEY_E])
 		{
-			rot_x_wing += 1.0f;
+			rot_x_wing += 0.5f;
 		}
 		else if (mainWindow.getsKeys()[GLFW_KEY_Q])
 		{
-			rot_x_wing -= 1.0f;
+			rot_x_wing -= 0.5f;
 		}
 		// Movimiento de x-wing
 		else if (mainWindow.getsKeys()[GLFW_KEY_1])
@@ -620,18 +624,9 @@ int main()
 		{
 			rot_x_wing = 360.0f;
 		}
-		//printf("x-wing -- rotation: %f, centerX: %f, centerY: %f, centerZ: %f \n", rot_x_wing, centerX, centerY, centerZ);
-		/*printf("camera2 -- xChange: %f, yChange: %f \n", 
-			camera.getYaw(),
-			camera.getPitch()
-		);*/
-		//model = glm::rotate(model, 43.0f * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+		printf("x-wing -- rotation: %f, centerX: %f, centerY: %f, centerZ: %f \n", rot_x_wing, centerX, centerY, centerZ);
 		model = glm::rotate(model, 82.0f * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::rotate(model, rot_x_wing * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
-		//model = glm::rotate(model, camera.getYaw() * toRadians, glm::vec3(0.0f, 0.5f, 1.0f));
-		//model = glm::rotate(model, camera.getPitch() * toRadians, glm::vec3(0.5f, 0.0f, 0.0f));
-		//model = glm::rotate(model, camera.getCameraDirection().z * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
-		// Tamaño de x-wing
+		model = glm::rotate(model, rot_x_wing * toRadians, glm::vec3(1.0f, 1.0f, 1.0f));
 		model = glm::scale(model, glm::vec3(0.006f, 0.006f, 0.006f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		shinyMaterial.UseMaterial(uniformSpecularIntensity, uniformShininess);
@@ -650,7 +645,6 @@ int main()
 		// engranaje
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 9.0f, 0.0f));
-		//model = glm::rotate(model, -90.0f * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.7f, 0.7f, 0.7f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		shinyMaterial.UseMaterial(uniformSpecularIntensity, uniformShininess);
@@ -714,23 +708,10 @@ int main()
 		// Dibujar puntos con la tecla f.
 		if (mainWindow.getsKeys()[GLFW_KEY_F])
 		{
-
-			printf("camera -- x: %f, y: %f, z: %f, dirX: %f, dirY: %f, dirZ: %f \n",
-				camera.getCameraPosition().x,
-				camera.getCameraPosition().y,
-				camera.getCameraPosition().z,
-				camera.getCameraDirection().x,
-				camera.getCameraDirection().y,
-				camera.getCameraDirection().z
-			);
-
-			//printf("viewMatrix:\n");
-			//printMatrix(camera.calculateViewMatrix());
-			
 			point_tmp.push_back(glm::vec3(
 				-(camera.getCameraPosition().x + initCameraX) * (initCameraSpeed + initCameraSpeedRot),
 				 (camera.getCameraPosition().y + initCameraY) * (initCameraSpeed + initCameraSpeedRot),
-				-(camera.getCameraPosition().z + initCameraZ) * (initCameraSpeed + initCameraSpeedRot)
+				-(camera.getCameraPosition().z - 1.0 + initCameraZ) * (initCameraSpeed + initCameraSpeedRot)
 			));
 			PointMesh* pointDrawn = new PointMesh(point_tmp);
 			pointDrawn->drawPoints();
@@ -775,7 +756,6 @@ int main()
 		PointMesh* pointMesh = new PointMesh(points);
 		pointMesh->drawPoints();
 		pointsList.push_back(pointMesh);
-		//printf("points: %d\n", points.size());
 
 		drawVectorsBresenh(points);
 
@@ -783,10 +763,6 @@ int main()
 		renderVectors();
 		pointsList[0]->renderPoints();
 		clearMemory();
-
-		// Renderizar plano cartesiano
-		//plane->renderPlane();
-		//pointsList[0]->renderPoints();
 
 		glUseProgram(0);
 
