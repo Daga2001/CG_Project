@@ -47,14 +47,30 @@ Se da clic sobre el botón que dice "Depurador local de Windows"
 
 ![image](https://user-images.githubusercontent.com/62605744/231726848-7ee4b067-c36b-42d5-9fd8-a011c8ff31e1.png)
 
-Cuando se ejecute el programa la salida debe de ser similar a esta:
+Cuando se ejecute el programa la salida debe de ser similar a estas:
 ![image](https://github.com/Daga2001/CG_Project/assets/62605744/4def088c-757d-4b6b-8128-75a1dac596fe)
+
+![image](https://github.com/Daga2001/CG_Project/assets/62605744/992f130a-e004-4e4c-ba2c-361c5e78817c)
+
+![image](https://github.com/Daga2001/CG_Project/assets/62605744/f976cf93-8034-489c-8410-cd9bb6e61da8)
 
 ## Aclaraciones
 - en la rama main se muestran archivos de c++ que muestran los algoritmos de rasterización vistos en clase en 3D.
 - se deja en una rama distinta las librerias a utilizar para la implementación de la actividad práctica de este laboratorio.
 - se recomienda tener paciencia durante la ejecución del programa, debido a que se hace uso de texturas y objetos pesados en 3D.
 - la simulación hecha en c++, permite al usuario interactuar en un mundo semiabierto, es decir, puede moverse con el teclado y rotar la vista con el mouse.
+
+## Teclas
+```
+Q --- Rotación hacía la izquierda respecto a los 3 ejes del plano cartesiano.
+E --- Rotación a la derecha respecto a los 3 ejes del plano cartesiano.
+1 --- para avanzar el x-wing adelante por el eje X.
+5 --- para avanzar el x-wing adelante por el eje Z.
+2 --- para retroceder el x-wing por el eje X.
+6 --- para retroceder el x-wing por el eje Z.
+4 --- bajar el x-wing por el eje Y.
+3 --- subir el x-wing por el eje Y.
+```
 
 ## Requerimientos
 - se requiere de las siguientes librerias o cabeceras (.h):
