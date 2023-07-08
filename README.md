@@ -62,14 +62,16 @@ Cuando se ejecute el programa la salida debe de ser similar a estas:
 
 ## Teclas
 ```
+F --- Dibujar punto en el ambiente.
+C --- Limpiar todos los puntos dibujados en el ambiente, si los hay.
 Q --- Rotación hacía la izquierda respecto a los 3 ejes del plano cartesiano.
 E --- Rotación a la derecha respecto a los 3 ejes del plano cartesiano.
-1 --- para avanzar el x-wing adelante por el eje X.
-5 --- para avanzar el x-wing adelante por el eje Z.
-2 --- para retroceder el x-wing por el eje X.
-6 --- para retroceder el x-wing por el eje Z.
-4 --- bajar el x-wing por el eje Y.
-3 --- subir el x-wing por el eje Y.
+1 --- Para avanzar el x-wing adelante por el eje X.
+5 --- Para avanzar el x-wing adelante por el eje Z.
+2 --- Para retroceder el x-wing por el eje X.
+6 --- Para retroceder el x-wing por el eje Z.
+4 --- Bajar el x-wing por el eje Y.
+3 --- Subir el x-wing por el eje Y.
 ```
 
 ## Requerimientos
